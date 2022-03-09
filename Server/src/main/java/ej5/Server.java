@@ -1,18 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package ej5;
 
+import ej5.SecondConverter;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+/**
+ *
+ * @author Luciano
+ */
 public class Server {
-
-    public static int SERVER_PORT = 9000;
-    public static String SERVICE_NAME = "monetaryCalculator";
-
     public static void main(String[] args) throws RemoteException {
-        Registry r = LocateRegistry.createRegistry(ej4.Server.SERVER_PORT);
-        r.rebind(SERVICE_NAME, new MonetaryCalculator());
+        Registry r = LocateRegistry.createRegistry(9000);
+        r.rebind("secondConverter", new SecondConverter());
 
-        System.out.println("server ready for connections...");
+        System.out.println("server 5 ready for connections...");
     }
 }
+
