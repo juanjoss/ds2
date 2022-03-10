@@ -11,16 +11,14 @@ public class PowerCalculator extends UnicastRemoteObject implements RemotePowerC
     }
 
     @Override
-    public long square(int number) throws RemoteException {
-        double square = Math.sqrt(number);
-        long result = (long) square;
+    public double square(double number) throws RemoteException {
+        double result = Math.sqrt(number);
         return result;
     }
 
     @Override
-    public long pow(int base, int exponent) throws RemoteException {
-        double pow = Math.pow(base, exponent);
-        long result = (long) pow;
+    public double pow(double base, double exponent) throws RemoteException {
+        double result = Math.pow(base, exponent);
         return result;
     }
 }

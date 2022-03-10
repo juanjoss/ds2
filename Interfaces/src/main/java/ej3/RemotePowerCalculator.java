@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 
 public interface RemotePowerCalculator extends Remote {
 
-    public long square(int number) throws RemoteException;
+    public double square(double number) throws RemoteException;
 
-    public long pow(int base, int exponent) throws RemoteException;
+    public double pow(double base, double exponent) throws RemoteException;
 }

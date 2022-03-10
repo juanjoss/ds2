@@ -22,12 +22,12 @@ public class Client {
                                                                              0.Salir"""));
             switch (option) {
                 case 1 -> {
-                    int sqrt = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un número: "));
+                    double sqrt = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese un número: "));
                     JOptionPane.showMessageDialog(null, "La raíz es: " + service.square(sqrt));
                 }
                 case 2 -> {
-                    int base = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la base: "));
-                    int exponent = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el exponente: "));
+                    double base = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese la base: "));
+                    double exponent = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el exponente: "));
                     JOptionPane.showMessageDialog(null, "La potencia es: " + service.pow(base, exponent));
                 }
                 case 0 ->
