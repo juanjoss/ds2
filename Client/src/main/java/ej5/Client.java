@@ -8,10 +8,8 @@ import javax.swing.JOptionPane;
 
 public class Client {
 
-    public static int SERVER_PORT = 9000;
-
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-        RemoteMonetaryCalculator service = (RemoteMonetaryCalculator) Naming.lookup("rmi://localhost:9000/monetaryCalculator");
+        RemoteMonetaryCalculator service = (RemoteMonetaryCalculator) Naming.lookup("rmi://localhost:9004/monetaryCalculator");
         boolean exit = false;
 
         while (!exit) {

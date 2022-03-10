@@ -1,5 +1,6 @@
-package ej2;
+package server;
 
+import ej2.RemoteCurrencyConverter;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 

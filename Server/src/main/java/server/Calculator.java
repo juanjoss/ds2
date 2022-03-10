@@ -1,5 +1,6 @@
-package ej4;
+package server;
 
+import ej4.RemoteCalculator;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 

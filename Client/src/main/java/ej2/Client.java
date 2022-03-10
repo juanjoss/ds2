@@ -8,10 +8,8 @@ import java.rmi.RemoteException;
 
 public class Client {
 
-    private static final int SERVER_PORT = 9000;
-
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-        RemoteCurrencyConverter service = (RemoteCurrencyConverter) Naming.lookup("rmi://localhost:" + SERVER_PORT + "/currencyConverter");
+        RemoteCurrencyConverter service = (RemoteCurrencyConverter) Naming.lookup("rmi://localhost:9001/currencyConverter");
         JTextField amount = new JTextField(8);
         String[] options = {"ARS to USD", "USD to ARS"};
         JComboBox<String> jComboBox = new JComboBox<>(options);

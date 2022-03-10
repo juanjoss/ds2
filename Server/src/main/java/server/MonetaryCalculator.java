@@ -1,5 +1,6 @@
-package ej5;
+package server;
 
+import ej5.RemoteMonetaryCalculator;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 

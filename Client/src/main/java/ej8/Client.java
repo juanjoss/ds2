@@ -8,10 +8,8 @@ import javax.swing.JOptionPane;
 
 public class Client {
 
-    public static int SERVER_PORT = 9000;
-
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-        RemoteAccount service = (RemoteAccount) Naming.lookup("rmi://localhost:9000/account");
+        RemoteAccount service = (RemoteAccount) Naming.lookup("rmi://localhost:9005/account");
         boolean exit = false;
 
         while (!exit) {
@@ -20,7 +18,7 @@ public class Client {
                                                                              1. Depositar
                                                                              2. Retirar
                                                                              3. Consultar
-                                                                             0.Salir"""));
+                                                                             Salir (esc)"""));
 
             switch (op) {
                 case 1 ->

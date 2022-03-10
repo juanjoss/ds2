@@ -4,29 +4,36 @@ import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import javax.swing.JOptionPane;
 
 public class Client {
 
-    public static String SERVER_IP = "localhost";
-    public static int SERVER_PORT = 9000;
-
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-        RemoteCalculator service = (RemoteCalculator) Naming.lookup("rmi://" + Client.SERVER_IP + ":" + Client.SERVER_PORT + "/" + "calculator");
+        RemoteCalculator service = (RemoteCalculator) Naming.lookup("rmi://localhost:9003/calculator");
+        boolean exit = false;
 
-        String op = args[1];
-        long x = Long.parseLong(args[0]), y = Long.parseLong(args[2]);
+        while (!exit) {
+            double op1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese operando 1: "));
+            String op = JOptionPane.showInputDialog("Ingrese operación (+ | - | x | /): ");
+            double op2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese operando 2: "));
+            double result = 0;
 
-        switch (op) {
-            case "+" ->
-                System.out.println("result for " + x + op + y + ": " + service.sum(x, y));
-            case "-" ->
-                System.out.println("result for " + x + op + y + ": " + service.subtract(x, y));
-            case "x" ->
-                System.out.println("result for " + x + op + y + ": " + service.multiply(x, y));
-            case "/" ->
-                System.out.println("result for " + x + op + y + ": " + service.divide(x, y));
-            default ->
-                System.out.println("invalid operation, format: x [+ | - | * | /] y");
+            switch (op) {
+                case "+" ->
+                    result = service.sum(op1, op2);
+                case "-" ->
+                    result = service.subtract(op1, op2);
+                case "x" ->
+                    result = service.multiply(op1, op2);
+                case "/" ->
+                    result = service.divide(op1, op2);
+                default -> {
+                    JOptionPane.showMessageDialog(null, "Operación invalida.");
+                    continue;
+                }
+            }
+
+            JOptionPane.showMessageDialog(null, "Resultado: " + result);
         }
     }
 }

@@ -8,11 +8,9 @@ import java.rmi.RemoteException;
 
 public class Client {
 
-    private static final int SERVER_PORT = 9000;
-
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
 
-        RemotePowerCalculator service = (RemotePowerCalculator) Naming.lookup("rmi://localhost:" + SERVER_PORT + "/powerCalculations");
+        RemotePowerCalculator service = (RemotePowerCalculator) Naming.lookup("rmi://localhost:9002/powerCalculations");
 
         boolean exit = false;
 
