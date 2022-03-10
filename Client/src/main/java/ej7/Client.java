@@ -1,5 +1,6 @@
 package ej7;
 
+import interfaces.RemoteBarCodeReader;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

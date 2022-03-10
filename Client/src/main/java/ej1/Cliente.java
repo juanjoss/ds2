@@ -1,5 +1,6 @@
 package ej1;
 
+import interfaces.CalendarioRemoto;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;

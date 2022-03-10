@@ -1,5 +1,6 @@
 package server;
 
+import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -15,7 +16,7 @@ public class Server {
         this.port = port;
     }
     
-    public static void main(String[] args) throws RemoteException {
+    public static void main(String[] args) throws RemoteException, AlreadyBoundException {
         new Server("localhost", 9001)
                 .run("calendar", new Calendario())
                 .run("currencyConverter", new CurrencyConverter())
@@ -27,9 +28,9 @@ public class Server {
                 .run("account", new Account());
     }
 
-    private Server run(String serviceName, UnicastRemoteObject remoteObject) throws RemoteException {
+    private Server run(String serviceName, UnicastRemoteObject remoteObject) throws RemoteException, AlreadyBoundException {
         Registry r = LocateRegistry.createRegistry(this.port);
-        r.rebind(serviceName, remoteObject);
+        r.bind(serviceName, remoteObject);
 
         System.out.println("service binded on " + this.getAddress() + serviceName);
         this.port++;
@@ -37,7 +38,7 @@ public class Server {
         return this;
     }
 
-    public String getAddress() {
+    private String getAddress() {
         return this.ip + ":" + this.port + "/";
     }
 }

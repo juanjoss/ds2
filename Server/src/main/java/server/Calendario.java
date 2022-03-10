@@ -1,6 +1,6 @@
 package server;
 
-import ej1.CalendarioRemoto;
+import interfaces.CalendarioRemoto;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.time.format.DateTimeFormatter;

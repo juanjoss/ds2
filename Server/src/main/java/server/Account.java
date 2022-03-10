@@ -1,6 +1,6 @@
 package server;
 
-import ej8.RemoteAccount;
+import interfaces.RemoteAccount;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 

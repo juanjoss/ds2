@@ -1,5 +1,6 @@
 package ej8;
 
+import interfaces.RemoteAccount;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;

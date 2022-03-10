@@ -1,6 +1,6 @@
 package server;
 
-import ej5.RemoteSecondConverter;
+import interfaces.RemoteSecondConverter;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 

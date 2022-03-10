@@ -1,5 +1,6 @@
 package ej2;
 
+import interfaces.RemoteCurrencyConverter;
 import javax.swing.*;
 import java.net.MalformedURLException;
 import java.rmi.Naming;

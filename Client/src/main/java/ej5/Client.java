@@ -1,5 +1,6 @@
 package ej5;
 
+import interfaces.RemoteSecondConverter;
 import javax.swing.*;
 import java.net.MalformedURLException;
 import java.rmi.Naming;

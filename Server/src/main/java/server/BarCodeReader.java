@@ -1,6 +1,6 @@
 package server;
 
-import ej7.RemoteBarCodeReader;
+import interfaces.RemoteBarCodeReader;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package ej7;
+package interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

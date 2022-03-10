@@ -1,5 +1,6 @@
 package ej4;
 
+import interfaces.RemoteCalculator;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;

@@ -1,5 +1,6 @@
 package ej3;
 
+import interfaces.RemotePowerCalculator;
 import javax.swing.*;
 import java.net.MalformedURLException;
 import java.rmi.Naming;

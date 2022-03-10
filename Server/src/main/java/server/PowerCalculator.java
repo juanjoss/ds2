@@ -1,6 +1,6 @@
 package server;
 
-import ej3.RemotePowerCalculator;
+import interfaces.RemotePowerCalculator;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
