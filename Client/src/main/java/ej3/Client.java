@@ -10,7 +10,7 @@ public class Client {
 
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
 
-        RemotePowerCalculator service = (RemotePowerCalculator) Naming.lookup("rmi://localhost:9002/powerCalculations");
+        RemotePowerCalculator service = (RemotePowerCalculator) Naming.lookup("rmi://localhost:9003/powerCalculations");
 
         boolean exit = false;
 
@@ -36,6 +36,5 @@ public class Client {
                     JOptionPane.showMessageDialog(null, "Solo números entre 0 y 2");
             }
         }
-
     }
 }

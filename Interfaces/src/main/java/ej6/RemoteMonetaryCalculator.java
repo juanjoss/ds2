@@ -1,4 +1,4 @@
-package ej5;
+package ej6;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

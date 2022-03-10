@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class Client {
 
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-        RemoteCalculator service = (RemoteCalculator) Naming.lookup("rmi://localhost:9003/calculator");
+        RemoteCalculator service = (RemoteCalculator) Naming.lookup("rmi://localhost:9004/calculator");
         boolean exit = false;
 
         while (!exit) {

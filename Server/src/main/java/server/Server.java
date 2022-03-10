@@ -16,12 +16,14 @@ public class Server {
     }
     
     public static void main(String[] args) throws RemoteException {
-        new Server("localhost", 9000)
+        new Server("localhost", 9001)
                 .run("calendar", new Calendario())
                 .run("currencyConverter", new CurrencyConverter())
                 .run("powerCalculations", new PowerCalculator())
                 .run("calculator", new Calculator())
+                .run("secondConverter", new SecondConverter())
                 .run("monetaryCalculator", new MonetaryCalculator())
+                .run("barCodeReader", new BarCodeReader())
                 .run("account", new Account());
     }
 

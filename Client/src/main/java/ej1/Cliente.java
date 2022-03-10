@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class Cliente {
 
     public static void main(String[] args) throws MalformedURLException, RemoteException, NotBoundException {
-        CalendarioRemoto service = (CalendarioRemoto) Naming.lookup("rmi://localhost:9000/calendar");
+        CalendarioRemoto service = (CalendarioRemoto) Naming.lookup("rmi://localhost:9002/calendar");
 
         JOptionPane.showMessageDialog(null, "Fecha y Hora Actuales: " + service.consultarFechayHora());
     }

@@ -32,7 +32,6 @@ public class Client {
                 double result = service.usdToArs(Double.parseDouble(amount.getText()));
                 System.out.println(result);
             }
-
         }
     }
 }
