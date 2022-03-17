@@ -17,7 +17,7 @@ public class Server {
     }
     
     public static void main(String[] args) throws RemoteException, AlreadyBoundException {
-        new Server("localhost", 9001)
+        new Server("127.0.0.1", 9001)
                 .run("calendar", new Calendario())
                 .run("currencyConverter", new CurrencyConverter())
                 .run("powerCalculations", new PowerCalculator())
