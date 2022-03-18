@@ -17,7 +17,7 @@ public class Client {
             double op1 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese operando 1: "));
             String op = JOptionPane.showInputDialog("Ingrese operación (+ | - | x | /): ");
             double op2 = Double.parseDouble(JOptionPane.showInputDialog("Ingrese operando 2: "));
-            double result = 0;
+            double result;
 
             switch (op) {
                 case "+" ->

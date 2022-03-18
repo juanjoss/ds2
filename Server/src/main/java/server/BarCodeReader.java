@@ -21,13 +21,18 @@ public class BarCodeReader extends UnicastRemoteObject implements RemoteBarCodeR
 
     @Override
     public String checkPrice(int code) throws RemoteException {
-        Product productTmp;
         String response = "";
-
+        
+        if(String.valueOf(code).length() != 9) {
+            response = "Código de barra invalido (9 dígitios requeridos).";
+            return response;
+        }
+        
+        Product productTmp;
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getBarCode() == code) {
                 productTmp = products.get(i);
-                response = productTmp.getName() + " : $" + String.valueOf(productTmp.getPrice());
+                response = productTmp.getName() + ": $" + String.valueOf(productTmp.getPrice());
                 break;
             } else {
                 response = "Producto no encontrado";

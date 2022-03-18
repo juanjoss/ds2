@@ -18,7 +18,7 @@ public class Client {
         JPanel myPanel = new JPanel();
         myPanel.add(new JLabel("$:"));
         myPanel.add(amount);
-        myPanel.add(Box.createHorizontalStrut(15)); // a spacer
+        myPanel.add(Box.createHorizontalStrut(15));
         myPanel.add(new JLabel("Convertion:"));
         myPanel.add(jComboBox);
 
@@ -28,10 +28,10 @@ public class Client {
         if (conv == JOptionPane.OK_OPTION) {
             if (jComboBox.getSelectedIndex() == 0) {
                 double result = service.arsToUsd(Double.parseDouble(amount.getText()));
-                System.out.println(result);
+                JOptionPane.showMessageDialog(null, "Resultado: " + result);
             } else {
                 double result = service.usdToArs(Double.parseDouble(amount.getText()));
-                System.out.println(result);
+                JOptionPane.showMessageDialog(null, "Resultado: " + result);
             }
         }
     }

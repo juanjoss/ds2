@@ -7,12 +7,17 @@ public class Product {
     public double price;
 
     public Product(int barCode, String name, double price) {
-        this.barCode = barCode;
-        this.name = name;
-        this.price = price;
-    }
+        if (String.valueOf(barCode).length() == 9) {
+            this.barCode = barCode;
+        }
 
-    public Product() {
+        if (!name.isBlank()) {
+            this.name = name;
+        }
+
+        if (price >= 0) {
+            this.price = price;
+        }
     }
 
     public int getBarCode() {

@@ -14,18 +14,25 @@ public class Client {
         boolean exit = false;
 
         while (!exit) {
-            int op = Integer.parseInt(JOptionPane.showInputDialog(null, """
-                                                                            Seleccione una opci\u00f3n: 
-                                                                             1. Depositar
-                                                                             2. Retirar
-                                                                             3. Consultar
-                                                                             Salir (esc)"""));
+            int op = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    """
+                Seleccione una opci\u00f3n: 
+                 1. Depositar
+                 2. Retirar
+                 3. Consultar
+                 Salir (esc)
+                    """)
+            );
 
             switch (op) {
                 case 1 ->
                     service.deposit(Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese monto a depositar: ")));
                 case 2 -> {
-                    boolean success = service.withdraw(Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese monto a retirar: ")));
+                    boolean success = service.withdraw(
+                            Double.parseDouble(
+                                    JOptionPane.showInputDialog(null, "Ingrese monto a retirar: ")
+                            )
+                    );
                     if (!success) {
                         JOptionPane.showMessageDialog(null, "Saldo Insuficiente.");
                     }

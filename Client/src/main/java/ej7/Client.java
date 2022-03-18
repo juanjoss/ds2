@@ -14,13 +14,15 @@ public class Client {
         RemoteBarCodeReader service = (RemoteBarCodeReader) Naming.lookup("rmi://localhost:9007/barCodeReader");
 
         boolean exit = false;
-
+        
         while (!exit) {
-            int barCode = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un codigo de barras: "));
-            JOptionPane.showMessageDialog(null, service.checkPrice(barCode));
-
-            if (barCode == JOptionPane.NO_OPTION) {
+            int barCode;
+            try {
+                barCode = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un codigo de barras: "));
+                JOptionPane.showMessageDialog(null, service.checkPrice(barCode));
+            } catch (NumberFormatException nfe) {
                 exit = true;
+                JOptionPane.showMessageDialog(null, "Código de barra invalido.");
             }
         }
     }

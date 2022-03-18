@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class CurrencyConverter extends UnicastRemoteObject implements RemoteCurrencyConverter {
 
-    private static final double CONV_RATE = 108.13;
+    private double convRate = 108.13;
 
     protected CurrencyConverter() throws RemoteException {
         super();
@@ -14,11 +14,11 @@ public class CurrencyConverter extends UnicastRemoteObject implements RemoteCurr
 
     @Override
     public double arsToUsd(double amount) {
-        return amount / CONV_RATE;
+        return amount / this.convRate;
     }
 
     @Override
     public double usdToArs(double amount) {
-        return amount * CONV_RATE;
+        return amount * this.convRate;
     }
 }

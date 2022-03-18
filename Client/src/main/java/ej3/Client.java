@@ -16,11 +16,17 @@ public class Client {
         boolean exit = false;
 
         while (!exit) {
-            int option = Integer.parseInt(JOptionPane.showInputDialog(null, """
-                                                                            Seleccione una opci\u00f3n: 
-                                                                             1. Calcular ra\u00edz
-                                                                             2. Calcular potencia 
-                                                                             0.Salir"""));
+            int option = Integer.parseInt(
+                JOptionPane.showInputDialog(null,
+                    """
+                    Seleccione una opci\u00f3n: 
+                    1. Calcular ra\u00edz
+                    2. Calcular potencia 
+                    0.Salir
+                    """
+                )
+            );
+            
             switch (option) {
                 case 1 -> {
                     double sqrt = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese un número: "));

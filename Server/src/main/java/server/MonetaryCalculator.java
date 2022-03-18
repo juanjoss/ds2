@@ -6,7 +6,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class MonetaryCalculator extends UnicastRemoteObject implements RemoteMonetaryCalculator {
 
-    private final double inflation = 0.548;
+    private double inflation = 0.548;
 
     public MonetaryCalculator() throws RemoteException {
         super();
