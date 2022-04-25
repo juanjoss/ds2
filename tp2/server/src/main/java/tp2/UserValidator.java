@@ -16,11 +16,11 @@ import javax.ejb.Stateless;
 public class UserValidator {
 
     // DB config
-    private String DB_HOST = "jjoss";
+    private String DB_HOST = "20.213.47.77";
     private String DB_NAME = "users";
     private String DB_URL = "jdbc:mysql://" + this.DB_HOST + "/" + this.DB_NAME + "?allowPublicKeyRetrieval=true&useSSL=false";
-    private String DB_USER = "root";
-    private String DB_PASSWORD = "root";
+    private String DB_USER = "admin";
+    private String DB_PASSWORD = "adminadmin";
     private boolean dbExists = false;
 
     // queries
@@ -32,7 +32,7 @@ public class UserValidator {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://jjoss?allowPublicKeyRetrieval=true&useSSL=false", 
+                    "jdbc:mysql://" + this.DB_HOST + "?allowPublicKeyRetrieval=true&useSSL=false", 
                     this.DB_USER, 
                     this.DB_PASSWORD
             );
