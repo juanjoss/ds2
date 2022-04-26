@@ -25,13 +25,14 @@ jobs:
           java-version: '8'
 
       - name: Build with Maven
-        run: mvn clean install
+        run: mvn clean install -f /tp2/server/pom.xml &&
+            mnv clean install -f /tp2/client/pom.xml
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          path: '${{ github.workspace }}/tp2/server/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
