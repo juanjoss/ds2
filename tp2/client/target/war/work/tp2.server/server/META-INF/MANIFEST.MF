@@ -4,5 +4,11 @@ Class-Path: lib/mysql-connector-java-8.0.28.jar lib/protobuf-java-3.11
  r
 Build-Jdk-Spec: 1.8
 Created-By: Maven WAR Plugin 3.3.2
+<<<<<<< HEAD
+=======
+Build-Jdk-Spec: 17
+Class-Path: lib/mysql-connector-java-8.0.28.jar lib/protobuf-java-3.11.4
+ .jar lib/MathParser.org-mXparser-5.0.2.jar lib/javax.jws-api-1.1.jar
+>>>>>>> 7025447b340a592203cd2962bd420b49809bfabe
 Main-Class: server.server
 

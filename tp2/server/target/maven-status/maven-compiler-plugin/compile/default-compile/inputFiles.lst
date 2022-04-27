@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\Calculator.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\PowerCalculator.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\BarCodeReader.java
@@ -5,3 +6,10 @@ C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\Test.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\UserValidator.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\CurrencyConverter.java
+=======
+C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\Calculator.java
+C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\CurrencyConverter.java
+C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\PowerCalculator.java
+C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\UserValidator.java
+C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\Test.java
+>>>>>>> 7025447b340a592203cd2962bd420b49809bfabe
