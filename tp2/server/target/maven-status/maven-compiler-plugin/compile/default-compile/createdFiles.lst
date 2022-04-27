@@ -1,5 +1,11 @@
 tp2\Calculator.class
 tp2\PowerCalculator.class
+<<<<<<< HEAD
 tp2\CurrencyConverter.class
+=======
+tp2\SecondConverter.class
+tp2\CurrencyConverter.class
+tp2\MonetaryCalculator.class
+>>>>>>> 2321a846590bcb4b7a42efc1d8f78cc922eec929
 tp2\Test.class
 tp2\UserValidator.class

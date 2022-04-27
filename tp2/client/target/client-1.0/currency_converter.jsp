@@ -10,6 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head>
     <body class="text-center">
+        <div class="p-2" style="display: table"><a class="btn btn-primary" href="/client">Home</a></div>
         <h1>Currency Converter</h1>
         <form action="/client/currency_converter.jsp">
             <div class="col-2 offset-5 col-sm-2 offset-sm-5 col-lg-2 offset-lg-5 col-xl-2 offset-xl-5">
