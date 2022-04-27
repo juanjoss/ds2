@@ -33,7 +33,8 @@
                     }
                 } else {
                     %>
-                        <h1 class="text-center mt-5">Login</h1>
+                    <div class="p-2" style="display: table"><a class="btn btn-primary" href="/client">Home</a></div>    
+                    <h1 class="text-center mt-5">Login</h1>
 
                         <div class="card bg-dark text-light col-6 col-offset-3 col-sm-6 offset-sm-3 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
                             <form class="text-center" method="POST" action="/client/user_validator.jsp">

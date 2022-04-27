@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="calculator/css/style.css">
     </head>
     <body>
+        <div class="p-3" style="display: table"><a class="btn btn-primary" href="/client">Home</a></div>
         <div class="container my-4">  
             <div class="calculator card">
                 <%
