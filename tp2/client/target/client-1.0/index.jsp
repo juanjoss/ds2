@@ -14,13 +14,14 @@
 
         <h1 style="margin-top: 20px">client index page</h1>
         <div class="main-content">
-            <!--   <div class="row">
+            <div class="exercise-item">
                 <a href="/client/currency_converter.jsp">Currency Converter</a>
-                <a href="/client/user_validator.jsp">User Validator</a>
-                <a href="/client/calculator.jsp">Calculator</a>
-            </div>  -->
-            <div class="exercise-item" href="/client/currency_converter.jsp">
-                <a href="/client/currency_converter.jsp">Currency Converter</a>
+            </div>
+            <div class="exercise-item">
+                <a href="/client/second_converter.jsp">Second Converter</a>
+            </div>
+            <div class="exercise-item" >
+                <a href="/client/bar_code_reader.jsp">Barcode reader</a>
             </div>
             <div class="exercise-item">
                 <a href="/client/user_validator.jsp">User Validator</a>
@@ -28,7 +29,6 @@
             <div class="exercise-item">
                 <a href="/client/calculator.jsp">Calculator</a>
             </div>
-
         </div>
 
     </body>
