@@ -1,25 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\Calculator.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\PowerCalculator.java
+C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\SecondConverter.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\BarCodeReader.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\TicketSearch.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\Test.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\UserValidator.java
+C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\Ticket.java
 C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\CurrencyConverter.java
-=======
-C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\Calculator.java
-C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\CurrencyConverter.java
-C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\PowerCalculator.java
-C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\UserValidator.java
-C:\Users\fuato\Desktop\SD II\ds2\tp2\server\src\main\java\tp2\Test.java
->>>>>>> 7025447b340a592203cd2962bd420b49809bfabe
-=======
-E:\DANNA\UNIVERSIDAD\SÉPTIMO SEMESTRE - UNLPAM\SISTEMAS DISTRIBUIDOS\ds2\tp2\server\src\main\java\tp2\Test.java
-E:\DANNA\UNIVERSIDAD\SÉPTIMO SEMESTRE - UNLPAM\SISTEMAS DISTRIBUIDOS\ds2\tp2\server\src\main\java\tp2\UserValidator.java
-E:\DANNA\UNIVERSIDAD\SÉPTIMO SEMESTRE - UNLPAM\SISTEMAS DISTRIBUIDOS\ds2\tp2\server\src\main\java\tp2\MonetaryCalculator.java
-E:\DANNA\UNIVERSIDAD\SÉPTIMO SEMESTRE - UNLPAM\SISTEMAS DISTRIBUIDOS\ds2\tp2\server\src\main\java\tp2\Calculator.java
-E:\DANNA\UNIVERSIDAD\SÉPTIMO SEMESTRE - UNLPAM\SISTEMAS DISTRIBUIDOS\ds2\tp2\server\src\main\java\tp2\SecondConverter.java
-E:\DANNA\UNIVERSIDAD\SÉPTIMO SEMESTRE - UNLPAM\SISTEMAS DISTRIBUIDOS\ds2\tp2\server\src\main\java\tp2\PowerCalculator.java
-E:\DANNA\UNIVERSIDAD\SÉPTIMO SEMESTRE - UNLPAM\SISTEMAS DISTRIBUIDOS\ds2\tp2\server\src\main\java\tp2\CurrencyConverter.java
->>>>>>> 2321a846590bcb4b7a42efc1d8f78cc922eec929
+C:\Users\NEO INFORMATICA\Documents\NetBeansProjects\ds2\tp2\server\src\main\java\tp2\MonetaryCalculator.java

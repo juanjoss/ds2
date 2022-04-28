@@ -76,8 +76,6 @@ public class BarCodeReader {
         if (!this.dbExists) {
             this.initDB();
         }
-        System.out.println("SELECT * FROM products WHERE barcode = " + barCode + ";");
-
         try {
             conn = DriverManager.getConnection(this.DB_URL, this.DB_USER, this.DB_PASSWORD);
             ps = conn.prepareStatement("SELECT * FROM products WHERE barcode = " + barCode + ";");
