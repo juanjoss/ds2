@@ -35,11 +35,16 @@
             <version>1.1</version>
             <type>jar</type>
         </dependency>
-          <dependency>
+        <dependency>
             <groupId>tp2.server</groupId>
             <artifactId>server</artifactId>
             <version>1.0</version>
             <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
         </dependency>
     </dependencies>
     

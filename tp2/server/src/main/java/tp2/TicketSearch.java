@@ -84,19 +84,19 @@ public class TicketSearch {
     }
 
     @WebMethod(operationName = "ticketSearch")
-    public List<Ticket> ticketSearch(@WebParam(name = "from") String from, @WebParam(name = "to") String to, @WebParam(name = "departure_date") String departure_date, @WebParam(name = "return_date") String return_date) throws ClassNotFoundException {
-        List<Ticket> response = new ArrayList();
-        
+    public List<String[]> ticketSearch(@WebParam(name = "from") String from, @WebParam(name = "to") String to, @WebParam(name = "departure_date") String departure_date, @WebParam(name = "return_date") String return_date) throws ClassNotFoundException {
+        List<String[]> response = new ArrayList();
+
         if (!this.dbExists) {
             this.initDB();
         }
         String query;
-        if(!(return_date == null)){
-            query = "SELECT * FROM tickets WHERE from_city = '" + from + "' AND to_city = '" + to + "' AND departure_date = STR_TO_DATE('" + departure_date + "','%d/%m/%Y') AND return_date = STR_TO_DATE('" + return_date + "','%d/%m/%Y') AND remaining_spots>0;";
-        }else{
-            query = "SELECT * FROM tickets WHERE from_city = '" + from + "' AND to_city = '" + to + "' AND departure_date = STR_TO_DATE('" + departure_date + "','%d/%m/%Y') AND remaining_spots>0;";
+        if (!(return_date.isEmpty())) {
+            query = "SELECT * FROM tickets WHERE from_city = '" + from + "' AND to_city = '" + to + "' AND departure_date = STR_TO_DATE('" + departure_date + "','%Y-%m-%d') AND return_date = STR_TO_DATE('" + return_date + "','%Y-%m-%d') AND remaining_spots>0;";
+        } else {
+            query = "SELECT * FROM tickets WHERE from_city = '" + from + "' AND to_city = '" + to + "' AND departure_date = STR_TO_DATE('" + departure_date + "','%Y-%m-%d') AND remaining_spots>0;";
         }
-        
+
         System.out.println(query);
 
         try {
@@ -104,11 +104,7 @@ public class TicketSearch {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Ticket t = null;
-                if(!(return_date == null))
-                    t = new Ticket(rs.getString("from_city"), rs.getString("to_city"), rs.getDate("departure_date"), rs.getDate("return_date"), rs.getInt("remaining_spots"), rs.getString("company_name"));
-                else
-                    t = new Ticket(rs.getString("from_city"), rs.getString("to_city"), rs.getDate("departure_date"), rs.getInt("remaining_spots"), rs.getString("company_name"));
+                String[] t = {rs.getString("company_name"), rs.getString("remaining_spots")};
                 response.add(t);
             }
             return response;

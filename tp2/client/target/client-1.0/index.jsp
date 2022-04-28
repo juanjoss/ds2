@@ -29,6 +29,9 @@
             <div class="exercise-item">
                 <a href="/client/calculator.jsp">Calculator</a>
             </div>
+            <div class="exercise-item">
+                <a href="/client/ticket_search.jsp">Ticket Search</a>
+            </div>            
         </div>
 
     </body>
