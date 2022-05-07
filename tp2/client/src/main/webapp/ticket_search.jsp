@@ -20,19 +20,19 @@
                     <div class="form-group row m-3">
                         <label for="startCity" class="col-sm-3 col-form-label">From</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="from_city" name="from_city" placeholder="City name">
+                            <input required type="text" class="form-control" id="from_city" name="from_city" placeholder="City name">
                         </div>
                     </div>
                     <div class="form-group row m-3">
                         <label for="finalCity" class="col-sm-3 col-form-label">To</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="to_city" name="to_city" placeholder="City name">
+                            <input required type="text" class="form-control" id="to_city" name="to_city" placeholder="City name">
                         </div>
                     </div>
                     <div class="form-group row m-3">
                         <label for="departureDate" class="col-sm-3 col-form-label">Departure Date</label>
                         <div class="col-sm-9">
-                            <input type="date" class="form-control" id="departure_date" name="departure_date">
+                            <input required type="date" class="form-control" id="departure_date" name="departure_date">
                         </div>
                     </div>
                     <div class="form-group row m-3">

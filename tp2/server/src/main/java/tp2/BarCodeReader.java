@@ -60,9 +60,9 @@ public class BarCodeReader {
             System.out.println("Table users created successfully...");
 
             // inserting test products
-            stmt.executeUpdate("INSERT INTO products (barcode, name, price) VALUES (010101010, 'maniSEEEETO', 200)");
-            stmt.executeUpdate("INSERT INTO products (barcode, name, price) VALUES (111111111, 'fideos', 200)");
-            stmt.executeUpdate("INSERT INTO products (barcode, name, price) VALUES (123456789, 'fideosnt', 200)");
+            stmt.executeUpdate("INSERT INTO products (barcode, name, price) VALUES (010101010, 'Mani King', 260)");
+            stmt.executeUpdate("INSERT INTO products (barcode, name, price) VALUES (111111111, 'Fideos', 200)");
+            stmt.executeUpdate("INSERT INTO products (barcode, name, price) VALUES (123456789, 'Chocolate Hamlet', 75)");
             stmt.executeUpdate("INSERT INTO products (barcode, name, price) VALUES (987654321, 'Alfajor', 150)");
 
         } catch (SQLException e) {
