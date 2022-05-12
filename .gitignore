@@ -35,3 +35,7 @@ Interfaces/target/*
 Server/target/*
 /tp2/client/target/
 /tp2/server/target/
+
+# tp3 spark products api
+/tp3/products_api/target/
+
