@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         $res = $product->save();
 
-        if($res){
+        if ($res) {
             return response()->json(['message' => 'Product created successfully'], 201);
         }
         return response()->json(['message' => 'Error creating product'], 500);
@@ -66,7 +66,31 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        if (!empty($request->input('id_brand'))) {
+            $product->id_brand = $request->input('id_brand');
+        }
+        if (!empty($request->input('id_type'))) {
+            $product->id_type = $request->input('id_type');
+        }
+        if (!empty($request->input('id_supplier'))) {
+            $product->id_supplier = $request->input('id_supplier');
+        }
+        if (!empty($request->input('name'))) {
+            $product->name = $request->input('name');
+        }
+        if (!empty($request->input('bar_code'))) {
+            $product->bar_code = $request->input('bar_code');
+        }
+        if (!empty($request->input('price'))) {
+            $product->price = $request->input('price');
+        }
+
+        $res = $product->save();
+
+        if ($res) {
+            return response()->json(['message' => 'Product update successfully', 'product' => $product], 201);
+        }
+        return response()->json(['message' => 'Error to update product'], 500);
     }
 
     /**
@@ -77,6 +101,12 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $res = $product->delete();
+
+        if ($res) {
+            return response()->json(['message' => 'Product delete succesfully']);
+        }
+
+        return response()->json(['message' => 'Error to delete product'], 500);
     }
 }
