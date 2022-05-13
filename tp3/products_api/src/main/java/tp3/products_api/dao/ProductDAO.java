@@ -26,7 +26,7 @@ public class ProductDAO {
         while (rs.next()) {
             Product product = new Product();
             product.setId(rs.getInt("id_product"));
-            product.setBarcode(rs.getString("bar_code"));
+            product.setBarcode(rs.getInt("bar_code"));
             product.setName(rs.getString("name"));
             product.setPrice(rs.getFloat("price"));
             product.setBrandId(rs.getInt("id_brand"));
@@ -49,7 +49,7 @@ public class ProductDAO {
 
         if (rs.next()) {
             product.setId(rs.getInt("id_product"));
-            product.setBarcode(rs.getString("bar_code"));
+            product.setBarcode(rs.getInt("bar_code"));
             product.setName(rs.getString("name"));
             product.setPrice(rs.getFloat("price"));
             product.setBrandId(rs.getInt("id_brand"));
@@ -71,8 +71,8 @@ public class ProductDAO {
                 + p.getBrandId() + ", "
                 + p.getTypeId() + ", "
                 + p.getSupplierId() + ", '"
-                + p.getName() + "', '"
-                + p.getBarcode() + "', "
+                + p.getName() + "', "
+                + p.getBarcode() + ", "
                 + p.getPrice()
                 + ")"
         );

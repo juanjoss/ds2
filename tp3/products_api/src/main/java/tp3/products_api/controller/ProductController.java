@@ -49,7 +49,7 @@ public class ProductController {
                         product.setTypeId(Integer.parseInt(req.queryParams("id_type")));
                         product.setSupplierId(Integer.parseInt(req.queryParams("id_supplier")));
                         product.setName(req.queryParams("name"));
-                        product.setBarcode(req.queryParams("barcode"));
+                        product.setBarcode(Integer.parseInt(req.queryParams("barcode")));
                         product.setPrice(Double.parseDouble(req.queryParams("price")));
 
                         this.productDAO.add(product);
@@ -69,12 +69,12 @@ public class ProductController {
                     try {
                         Product product = new Product();
 
-                        product.setBarcode(req.params("id"));
+                        product.setId(Integer.parseInt(req.params("id")));
                         product.setBrandId(Integer.parseInt(req.queryParams("id_brand")));
                         product.setTypeId(Integer.parseInt(req.queryParams("id_type")));
                         product.setSupplierId(Integer.parseInt(req.queryParams("id_supplier")));
                         product.setName(req.queryParams("name"));
-                        product.setBarcode(req.queryParams("barcode"));
+                        product.setBarcode(Integer.parseInt(req.queryParams("barcode")));
                         product.setPrice(Double.parseDouble(req.queryParams("price")));
 
                         this.productDAO.update(product);

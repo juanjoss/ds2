@@ -10,7 +10,7 @@ public class Product {
     @Expose
     private int id = 0;
     @Expose
-    private String barcode = "";
+    private int barcode = 999999999;
     @Expose
     private String name = "";
     @Expose
