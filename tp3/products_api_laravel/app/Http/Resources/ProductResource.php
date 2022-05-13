@@ -16,18 +16,9 @@ class ProductResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'brand' => [
-                'id' => $this->brand->id,
-                'name' => $this->brand->name,
-            ],
-            'type' => [
-                'id' => $this->productType->id,
-                'name' => $this->productType->name,
-            ],
-            'supplier' => [
-                'id' => $this->supplier->id,
-                'name' => $this->supplier->name,
-            ],
+            'brand' => route('productBrand',['product'=>$this->id, 'brand'=>$this->brand->id]),
+            'type' => route('productProductType',['product'=>$this->id, 'productType'=>$this->productType->id]),
+            'supplier' => route('productSupplier',['product'=>$this->id, 'supplier'=>$this->supplier->id]),
             'name' => $this->name,
             'bar_code' => $this->bar_code,
             'price' => $this->price,
