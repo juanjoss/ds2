@@ -1,0 +1,341 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Products Laravel API REST",
+        "description": "CRUD products table",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/products": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get list of products",
+                "description": "Returns list of products",
+                "operationId": "ab015cc2055ac75e6d23c628675c26e7",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id_brand": {
+                                                        "type": "integer",
+                                                        "example": "1"
+                                                    },
+                                                    "id_type": {
+                                                        "type": "integer",
+                                                        "example": "2"
+                                                    },
+                                                    "id_supplier": {
+                                                        "type": "integer",
+                                                        "example": "3"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "Product name"
+                                                    },
+                                                    "bar_code": {
+                                                        "type": "integer",
+                                                        "example": "123456789"
+                                                    },
+                                                    "price": {
+                                                        "type": "number",
+                                                        "format": "double",
+                                                        "example": "100.00"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Store new project",
+                "description": "Create a new product",
+                "operationId": "7ff81b1681ff3180e5b73a2e15f2c67b",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_brand": {
+                                                "type": "integer"
+                                            },
+                                            "id_type": {
+                                                "type": "integer"
+                                            },
+                                            "id_supplier": {
+                                                "type": "integer"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "barcode": {
+                                                "type": "integer"
+                                            },
+                                            "price": {
+                                                "type": "number",
+                                                "format": "double"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_brand": 1,
+                                    "id_type": 2,
+                                    "id_supplier": 3,
+                                    "name": "product name",
+                                    "bar_code": 1155449,
+                                    "price": 100
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Product created successfully"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error creating product"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/products/{id}": {
+            "get": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Get product information",
+                "description": "Returns product data",
+                "operationId": "47affec446a4e21ba3cbf0b6b14abb44",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {
+                                            "properties": {
+                                                "id_brand": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "id_type": {
+                                                    "type": "integer",
+                                                    "example": 2
+                                                },
+                                                "id_supplier": {
+                                                    "type": "integer",
+                                                    "example": 3
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "example": "product name"
+                                                },
+                                                "bar_code": {
+                                                    "type": "integer",
+                                                    "example": "123456789"
+                                                },
+                                                "price": {
+                                                    "type": "number",
+                                                    "format": "double",
+                                                    "example": "100.00"
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Product Not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Products"
+                ],
+                "operationId": "33173a96c7ab5ed4ba9ceaffb4c6003d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Product deleted successfully"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Product Not found"
+                    },
+                    "500": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error to delete product"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Products"
+                ],
+                "summary": "Update existing product",
+                "description": "Returns updated product data",
+                "operationId": "18787fa97f775a103ecd06467f58fe74",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id_brand": {
+                                                "type": "integer"
+                                            },
+                                            "id_type": {
+                                                "type": "integer"
+                                            },
+                                            "id_supplier": {
+                                                "type": "integer"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "barcode": {
+                                                "type": "integer"
+                                            },
+                                            "price": {
+                                                "type": "number",
+                                                "format": "double"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id_brand": 1,
+                                    "id_type": 2,
+                                    "id_supplier": 3,
+                                    "name": "product name",
+                                    "bar_code": 1155449,
+                                    "price": 100
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "404": {
+                        "description": "Product Not found"
+                    }
+                }
+            }
+        }
+    }
+}
