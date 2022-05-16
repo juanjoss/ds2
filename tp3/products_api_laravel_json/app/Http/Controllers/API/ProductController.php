@@ -10,6 +10,9 @@ use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
+use App\Http\Resources\ProductTypeResource;
+use App\Http\Resources\BrandResource;
+use App\Http\Resources\SupplierResource;
 
 class ProductController extends Controller
 {
@@ -59,6 +62,39 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return new ProductResource($product);
+    }
+
+    /**
+     * Display the specified resource from a relationship.
+     *
+     * @param  string  $productType
+     * @return \Illuminate\Http\Response
+     */
+    public function showProductType(Product $product, String $productType)
+    {
+        return new ProductTypeResource(ProductType::find($productType));
+    }
+
+    /**
+     * Display the specified resource from a relationship.
+     *
+     * @param  \App\Models\Brand  $brand
+     * @return \Illuminate\Http\Response
+     */
+    public function showBrand(Product $product, String $brand)
+    {
+        return new BrandResource(Brand::find($brand));
+    }
+
+    /**
+     * Display the specified resource from a relationship.
+     *
+     * @param  string  $supplier
+     * @return \Illuminate\Http\Response
+     */
+    public function showSupplier(Product $product, String $supplier)
+    {
+        return new SupplierResource(Supplier::find($supplier));
     }
 
     /**

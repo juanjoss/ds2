@@ -31,17 +31,6 @@ class ProductTypeController extends Controller
     }
 
     /**
-     * Display the specified resource from a relationship.
-     *
-     * @param  string  $productType
-     * @return \Illuminate\Http\Response
-     */
-    public function show_rel(String $product, String $productType)
-    {
-        return new ProductTypeResource(ProductType::find($productType));
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

@@ -31,17 +31,6 @@ class SupplierController extends Controller
     }
 
     /**
-     * Display the specified resource from a relationship.
-     *
-     * @param  string  $supplier
-     * @return \Illuminate\Http\Response
-     */
-    public function show_rel(String $product, String $supplier)
-    {
-        return new SupplierResource(Supplier::find($supplier));
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

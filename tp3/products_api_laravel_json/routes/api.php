@@ -24,6 +24,6 @@ Route::apiResource('/product_types',App\Http\Controllers\API\ProductTypeControll
 Route::apiResource('/suppliers',App\Http\Controllers\API\SupplierController::class)->middleware('api');
 
 //Product relationship routes
-Route::get('/products/{product}/supplier/{supplier}',[App\Http\Controllers\API\SupplierController::class, 'show_rel'])->name('productSupplier')->middleware('api');
-Route::get('/products/{product}/brand/{brand}',[App\Http\Controllers\API\BrandController::class, 'show_rel'])->name('productBrand')->middleware('api');
-Route::get('/products/{product}/type/{productType}',[App\Http\Controllers\API\ProductTypeController::class, 'show_rel'])->name('productProductType')->middleware('api');
+Route::get('/products/{product}/supplier/{supplier}',[App\Http\Controllers\API\ProductController::class, 'showSupplier'])->name('productSupplier')->middleware('api');
+Route::get('/products/{product}/brand/{brand}',[App\Http\Controllers\API\ProductController::class, 'showBrand'])->name('productBrand')->middleware('api');
+Route::get('/products/{product}/type/{productType}',[App\Http\Controllers\API\ProductController::class, 'showProductType'])->name('productProductType')->middleware('api');

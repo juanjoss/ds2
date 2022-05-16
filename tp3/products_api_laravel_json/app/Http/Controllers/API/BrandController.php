@@ -31,17 +31,6 @@ class BrandController extends Controller
     }
 
     /**
-     * Display the specified resource from a relationship.
-     *
-     * @param  \App\Models\Brand  $brand
-     * @return \Illuminate\Http\Response
-     */
-    public function show_rel(String $product, String $brand)
-    {
-        return new BrandResource(Brand::find($brand));
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
