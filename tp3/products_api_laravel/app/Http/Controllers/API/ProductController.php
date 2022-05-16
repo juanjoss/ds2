@@ -31,49 +31,11 @@ class ProductController extends Controller
      *      tags={"Products"},
      *      summary="Get list of products",
      *      description="Returns list of products",
-     *     @OA\Response(
-     *         response=200,
-     *         description="success",
-     *         @OA\JsonContent(
-     *             @OA\Property(
-     *                 type="array",
-     *                 property="data",
-     *                 @OA\Items(
-     *                     type="object",
-     *                      @OA\Property(
-     *                          property="id_brand",
-     *                          type="integer",
-     *                          example="1"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="id_type",
-     *                          type="integer",
-     *                          example="2"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="id_supplier",
-     *                          type="integer",
-     *                          example="3"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="name",
-     *                          type="string",
-     *                          example="Product name"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="bar_code",
-     *                          type="integer",
-     *                          example="123456789"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="price",
-     *                          type="double",
-     *                          example="100.00"
-     *                      ),
-     *                )
-     *             )
-     *         )
-     *     )
+     *  @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\JsonContent(ref="#/components/schemas/Products")
+     *       ),
      * )
      */
 
@@ -97,46 +59,8 @@ class ProductController extends Controller
      *     summary="Store new project",
      *     description="Create a new product",
      *     @OA\RequestBody(
-     *         @OA\MediaType(
-     *             mediaType="application/json",
-     *             @OA\Schema(
-     *                 @OA\Property(
-     *                      type="object",
-     *                      @OA\Property(
-     *                          property="id_brand",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="id_type",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="id_supplier",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="name",
-     *                          type="string"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="barcode",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="price",
-     *                          type="double"
-     *                      ),
-     *                 ),
-     *                 example={
-     *                     "id_brand": 1,
-     *                     "id_type": 2,
-     *                     "id_supplier": 3,
-     *                     "name": "product name",
-     *                     "bar_code": 001155449,
-     *                     "price": 100.00
-     *                }
-     *             )
-     *         )
+     *          required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/StoreProductRequest")
      *      ),
      *      @OA\Response(
      *          response=201,
@@ -196,18 +120,9 @@ class ProductController extends Controller
      *         @OA\Schema(type="string")
      *     ),
      *     @OA\Response(
-     *         response=200,
-     *         description="success",
-     *         @OA\JsonContent(
-     *            @OA\Property(property="data", type="object",
-     *              @OA\Property(property="id_brand", type="integer", example=1),
-     *              @OA\Property(property="id_type", type="integer", example=2),
-     *              @OA\Property(property="id_supplier", type="integer", example=3),
-     *              @OA\Property(property="name", type="string", example="product name"),
-     *              @OA\Property(property="bar_code", type="integer", example="123456789"),
-     *              @OA\Property(property="price", type="double", example="100.00"),
-     *         )
-     *       )
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\JsonContent(ref="#/components/schemas/Product")
      *  ),
      *    @OA\Response(
      *    response=404,
@@ -244,50 +159,13 @@ class ProductController extends Controller
      *         @OA\Schema(type="string")
      *     ),
      *      @OA\RequestBody(
-     *         @OA\MediaType(
-     *             mediaType="application/json",
-     *             @OA\Schema(
-     *                 @OA\Property(
-     *                      type="object",
-     *                      @OA\Property(
-     *                          property="id_brand",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="id_type",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="id_supplier",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="name",
-     *                          type="string"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="barcode",
-     *                          type="integer"
-     *                      ),
-     *                      @OA\Property(
-     *                          property="price",
-     *                          type="double"
-     *                      ),
-     *                 ),
-     *                 example={
-     *                     "id_brand": 1,
-     *                     "id_type": 2,
-     *                     "id_supplier": 3,
-     *                     "name": "product name",
-     *                     "bar_code": 001155449,
-     *                     "price": 100.00
-     *                }
-     *             )
-     *         )
+     *      required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/StoreProductRequest")
      *      ),
      *     @OA\Response(
      *         response=200,
-     *         description="success"
+     *         description="success",
+     *         @OA\JsonContent(ref="#/components/schemas/Product")
      *     ),
      *     @OA\Response(
      *         response=404,
