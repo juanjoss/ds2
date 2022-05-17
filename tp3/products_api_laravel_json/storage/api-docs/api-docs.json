@@ -1,0 +1,348 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Products Laravel API REST JSON API",
+        "description": "Products Laravel API Resources + JSON API Spec",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/products": {
+            "get": {
+                "tags": ["Products"],
+                "summary": "Get list of products",
+                "description": "Returns list of products",
+                "operationId": "ab015cc2055ac75e6d23c628675c26e7",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductsResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": ["Products"],
+                "summary": "Store new project",
+                "description": "Create a new product",
+                "operationId": "7ff81b1681ff3180e5b73a2e15f2c67b",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StoreProductRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductsResource"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error creating product"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/products/{id}": {
+            "get": {
+                "tags": ["Products"],
+                "summary": "Get product information",
+                "description": "Returns product data",
+                "operationId": "47affec446a4e21ba3cbf0b6b14abb44",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Product Not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Products"],
+                "summary": "Delete existing project",
+                "description": "Deletes a record and returns no content",
+                "operationId": "33173a96c7ab5ed4ba9ceaffb4c6003d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    },
+                    "404": {
+                        "description": "Product Not found"
+                    },
+                    "500": {
+                        "description": "invalid"
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["Products"],
+                "summary": "Update existing product",
+                "description": "Returns updated product data",
+                "operationId": "18787fa97f775a103ecd06467f58fe74",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/StoreProductRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Product"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Product Not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ProductsResource": {
+                "title": "Products list",
+                "description": "Product model",
+                "properties": {
+                    "data": {
+                        "title": "Data",
+                        "description": "Data wrapper",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Product"
+                        }
+                    }
+                }
+            },
+            "Product": {
+                "title": "Product",
+                "properties": {
+                    "type": {
+                        "title": "type",
+                        "type": "string",
+                        "example": "products"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "attributes": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "example": "Product name"
+                            },
+                            "bar_code": {
+                                "type": "integer",
+                                "example": 456789123
+                            },
+                            "price": {
+                                "type": "double",
+                                "example": 100.0
+                            }
+                        }
+                    },
+                    "relationships": {
+                        "type": "object",
+                        "properties": {
+                            "brand": {
+                                "type": "object",
+                                "properties": {
+                                    "links": {
+                                        "type": "object",
+                                        "properties": {
+                                            "related": {
+                                                "type": "string",
+                                                "example": "http://127.0.0.1:8000/api/products/1/brand/4"
+                                            }
+                                        }
+                                    },
+                                    "data": {
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "type": "string",
+                                                "example": "brands"
+                                            },
+                                            "id": {
+                                                "type": "integer",
+                                                "example": 4
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "type": {
+                                "type": "object",
+                                "properties": {
+                                    "links": {
+                                        "type": "object",
+                                        "properties": {
+                                            "related": {
+                                                "type": "string",
+                                                "example": "http://127.0.0.1:8000/api/products/1/type/2"
+                                            }
+                                        }
+                                    },
+                                    "data": {
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "type": "string",
+                                                "example": "productTypes"
+                                            },
+                                            "id": {
+                                                "type": "integer",
+                                                "example": 2
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "supplier": {
+                                "type": "object",
+                                "properties": {
+                                    "links": {
+                                        "type": "object",
+                                        "properties": {
+                                            "related": {
+                                                "type": "string",
+                                                "example": "http://127.0.0.1:8000/api/products/1/supplier/2"
+                                            }
+                                        }
+                                    },
+                                    "data": {
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "type": "string",
+                                                "example": "suppliers"
+                                            },
+                                            "id": {
+                                                "type": "integer",
+                                                "example": 2
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "links": {
+                        "type": "object",
+                        "properties": {
+                            "self": {
+                                "type": "string",
+                                "example": "http://127.0.0.1:8000/api/products/1"
+                            }
+                        }
+                    }
+                }
+            },
+            "StoreProductRequest": {
+                "title": "Product request body",
+                "properties": {
+                    "id_brand": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "id_type": {
+                        "type": "integer",
+                        "example": 2
+                    },
+                    "id_supplier": {
+                        "type": "integer",
+                        "example": 3
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Product name"
+                    },
+                    "bar_code": {
+                        "type": "integer",
+                        "example": 456789123
+                    },
+                    "price": {
+                        "type": "double",
+                        "example": 100.0
+                    }
+                }
+            }
+        }
+    }
+}

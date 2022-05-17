@@ -14,6 +14,16 @@ use App\Http\Resources\ProductTypeResource;
 use App\Http\Resources\BrandResource;
 use App\Http\Resources\SupplierResource;
 
+/**
+ * @OA\OpenApi(
+ *     @OA\Info(
+ *         version="1.0",
+ *         title="Products Laravel API REST JSON API",
+ *         description="Products Laravel API Resources + JSON API Spec",
+ *     )
+ * )
+ */
+
 class ProductController extends Controller
 {
     /**
@@ -21,6 +31,21 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * @OA\Get(
+     *      path="/api/products",
+     *      tags={"Products"},
+     *      summary="Get list of products",
+     *      description="Returns list of products",
+     *  @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\JsonContent(ref="#/components/schemas/Product")
+     *       ),
+     * )
+     */
+
     public function index()
     {
         return ProductResource::collection(Product::all());
@@ -32,6 +57,34 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     /**
+     * @OA\Post (
+     *     path="/api/products",
+     *     tags={"Products"},
+     *     summary="Store new project",
+     *     description="Create a new product",
+     *     @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/StoreProductRequest")
+     *      ),
+     *      @OA\Response(
+     *          response=201,
+     *          description="success",
+     *          @OA\JsonContent(
+     *              ref="#/components/schemas/ProductsResource"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=500,
+     *          description="invalid",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="message", type="string", example="Error creating product"),
+     *          )
+     *      )
+     * )
+     */
+
     public function store(ProductRequest $request)
     {
         $request->validated();
@@ -59,6 +112,32 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+
+   /**
+     * @OA\Get (
+     *     path="/api/products/{id}",
+     *     tags={"Products"},
+     *     summary="Get product information",
+     *     description="Returns product data",
+     *     @OA\Parameter(
+     *         in="path",
+     *         name="id",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="Successful operation",
+     *          @OA\JsonContent(ref="#/components/schemas/Product")
+     *  ),
+     *    @OA\Response(
+     *    response=404,
+     *    description="Product Not found"
+     *    )
+     * )
+     */
+
+
     public function show(Product $product)
     {
         return new ProductResource($product);
@@ -104,6 +183,35 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+
+     /**
+     * @OA\Patch(
+     *      path="/api/products/{id}",
+     *      tags={"Products"},
+     *      summary="Update existing product",
+     *      description="Returns updated product data",
+     *     @OA\Parameter(
+     *         in="path",
+     *         name="id",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *      @OA\RequestBody(
+     *      required=true,
+     *          @OA\JsonContent(ref="#/components/schemas/StoreProductRequest")
+     *      ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="success",
+     *         @OA\JsonContent(ref="#/components/schemas/Product")
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Product Not found"
+     *    )
+     * )
+     */
+
     public function update(Request $request, String $product)
     {
         $product = Product::find($product);
@@ -130,7 +238,7 @@ class ProductController extends Controller
                     $product->id_supplier = $request->input('id_supplier');
                 }else{
                     return response(null,404);
-                }   
+                }
             }
             if (!empty($request->input('name'))) {
                 $product->name = $request->input('name');
@@ -141,13 +249,13 @@ class ProductController extends Controller
             if (!empty($request->input('price'))) {
                 $product->price = $request->input('price');
             }
-    
+
             $res = $product->save();
-    
+
             if(count($request->all()) == 0){
                 return response()->noContent();
             }
-    
+
             if ($res) {
                 return new ProductResource($product);
             }
@@ -164,6 +272,33 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * @OA\Delete (
+     *     path="/api/products/{id}",
+     *     tags={"Products"},
+     *     summary="Delete existing project",
+     *     description="Deletes a record and returns no content",
+     *     @OA\Parameter(
+     *         in="path",
+     *         name="id",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *          response=200,
+     *          description="success"
+     *      ),
+     *    @OA\Response(
+     *    response=404,
+     *    description="Product Not found"
+     *    ),
+     *      @OA\Response(
+     *          response=500,
+     *          description="invalid"
+     * )
+     */
+
     public function destroy(String $product)
     {
         $product = Product::find($product);
