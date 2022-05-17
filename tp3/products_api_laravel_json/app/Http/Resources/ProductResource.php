@@ -25,7 +25,7 @@ class ProductResource extends JsonResource
             'relationships' => [
                 'brand' => [
                     'links' => [
-                        'related' => route('productBrand',['product'=>$this->id, 'brand'=>$this->brand->id])
+                        'related' => route('productBrand',['product'=>$this->id])
                     ],
                     'data' => [
                         'type' => 'brands',
@@ -34,7 +34,7 @@ class ProductResource extends JsonResource
                 ],
                 'type' => [
                     'links' => [
-                        'related' => route('productProductType',['product'=>$this->id, 'productType'=>$this->productType->id])
+                        'related' => route('productProductType',['product'=>$this->id])
                     ],
                     'data' => [
                         'type' => 'productTypes',
@@ -43,7 +43,7 @@ class ProductResource extends JsonResource
                 ],
                 'supplier' => [
                     'links' => [
-                        'related' => route('productSupplier',['product'=>$this->id, 'supplier'=>$this->supplier->id])
+                        'related' => route('productSupplier',['product'=>$this->id])
                     ],
                     'data' => [
                         'type' => 'suppliers',

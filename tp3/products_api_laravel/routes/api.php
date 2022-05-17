@@ -21,6 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('/products',App\Http\Controllers\API\ProductController::class)->middleware('api');
 
 //Product relationship routes
-Route::get('/products/{product}/supplier/{supplier}',[App\Http\Controllers\API\ProductController::class, 'showSupplier'])->name('productSupplier')->middleware('api');
-Route::get('/products/{product}/brand/{brand}',[App\Http\Controllers\API\ProductController::class, 'showBrand'])->name('productBrand')->middleware('api');
-Route::get('/products/{product}/type/{productType}',[App\Http\Controllers\API\ProductController::class, 'showProductType'])->name('productProductType')->middleware('api');
+Route::get('/products/{product}/supplier',[App\Http\Controllers\API\ProductController::class, 'showSupplier'])->name('productSupplier')->middleware('api');
+Route::get('/products/{product}/brand',[App\Http\Controllers\API\ProductController::class, 'showBrand'])->name('productBrand')->middleware('api');
+Route::get('/products/{product}/type',[App\Http\Controllers\API\ProductController::class, 'showProductType'])->name('productProductType')->middleware('api');
