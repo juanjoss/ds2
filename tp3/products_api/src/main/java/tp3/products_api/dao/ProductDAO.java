@@ -25,7 +25,7 @@ public class ProductDAO {
 
         while (rs.next()) {
             Product product = new Product();
-            product.setId(rs.getInt("id_product"));
+            product.setId(rs.getInt("id"));
             product.setBarcode(rs.getInt("bar_code"));
             product.setName(rs.getString("name"));
             product.setPrice(rs.getFloat("price"));
@@ -44,11 +44,11 @@ public class ProductDAO {
         Connection conn = db.getConn();
         Product product = new Product();
 
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM products WHERE id_product = " + id);
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM products WHERE id = " + id);
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            product.setId(rs.getInt("id_product"));
+            product.setId(rs.getInt("id"));
             product.setBarcode(rs.getInt("bar_code"));
             product.setName(rs.getString("name"));
             product.setPrice(rs.getFloat("price"));
@@ -91,7 +91,7 @@ public class ProductDAO {
                 + p.getName() + "', bar_code = '"
                 + p.getBarcode() + "', price = "
                 + p.getPrice()
-                + " WHERE id_product = " + p.getId() + ""
+                + " WHERE id = " + p.getId() + ""
         );
     }
 
@@ -100,6 +100,6 @@ public class ProductDAO {
         Connection conn = db.getConn();
 
         Statement stmt = conn.createStatement();
-        stmt.executeUpdate("DELETE FROM products WHERE id_product = " + id);
+        stmt.executeUpdate("DELETE FROM products WHERE id = " + id);
     }
 }

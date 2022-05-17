@@ -24,7 +24,7 @@ public class SupplierDAO {
 
         while (rs.next()) {
             Supplier s = new Supplier();
-            s.setId(rs.getInt("id_supplier"));
+            s.setId(rs.getInt("id"));
             s.setName(rs.getString("name"));
 
             suppliers.add(s);
@@ -38,11 +38,11 @@ public class SupplierDAO {
         Connection conn = db.getConn();
         Supplier s = new Supplier();
 
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM suppliers WHERE id_supplier = " + id);
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM suppliers WHERE id = " + id);
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            s.setId(rs.getInt("id_supplier"));
+            s.setId(rs.getInt("id"));
             s.setName(rs.getString("name"));
         }
 
@@ -70,7 +70,7 @@ public class SupplierDAO {
         stmt.executeUpdate(""
                 + "UPDATE suppliers SET name = '"
                 + s.getName() + "'"
-                + " WHERE id_supplier = " + s.getId()
+                + " WHERE id = " + s.getId()
         );
     }
 
@@ -79,6 +79,6 @@ public class SupplierDAO {
         Connection conn = db.getConn();
 
         Statement stmt = conn.createStatement();
-        stmt.executeUpdate("DELETE FROM suppliers WHERE id_supplier = " + id);
+        stmt.executeUpdate("DELETE FROM suppliers WHERE id = " + id);
     }
 }

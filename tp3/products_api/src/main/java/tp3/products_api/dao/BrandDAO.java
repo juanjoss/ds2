@@ -24,7 +24,7 @@ public class BrandDAO {
 
         while (rs.next()) {
             Brand brand = new Brand();
-            brand.setId(rs.getInt("id_brand"));
+            brand.setId(rs.getInt("id"));
             brand.setName(rs.getString("name"));
 
             brands.add(brand);
@@ -38,11 +38,11 @@ public class BrandDAO {
         Connection conn = db.getConn();
         Brand brand = new Brand();
 
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM brands WHERE id_brand = " + id);
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM brands WHERE id = " + id);
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            brand.setId(rs.getInt("id_brand"));
+            brand.setId(rs.getInt("id"));
             brand.setName(rs.getString("name"));
         }
 
@@ -70,7 +70,7 @@ public class BrandDAO {
         stmt.executeUpdate(""
                 + "UPDATE brands SET name = '"
                 + b.getName() + "'"
-                + " WHERE id_brand = " + b.getId()
+                + " WHERE id = " + b.getId()
         );
     }
 
@@ -79,6 +79,6 @@ public class BrandDAO {
         Connection conn = db.getConn();
 
         Statement stmt = conn.createStatement();
-        stmt.executeUpdate("DELETE FROM brands WHERE id_brand = " + id);
+        stmt.executeUpdate("DELETE FROM brands WHERE id = " + id);
     }
 }

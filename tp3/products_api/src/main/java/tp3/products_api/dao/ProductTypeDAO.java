@@ -24,7 +24,7 @@ public class ProductTypeDAO {
 
         while (rs.next()) {
             ProductType pt = new ProductType();
-            pt.setId(rs.getInt("id_type"));
+            pt.setId(rs.getInt("id"));
             pt.setName(rs.getString("name"));
 
             types.add(pt);
@@ -38,11 +38,11 @@ public class ProductTypeDAO {
         Connection conn = db.getConn();
         ProductType pt = new ProductType();
 
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM product_types WHERE id_type = " + id);
+        PreparedStatement ps = conn.prepareStatement("SELECT * FROM product_types WHERE id = " + id);
         ResultSet rs = ps.executeQuery();
 
         if (rs.next()) {
-            pt.setId(rs.getInt("id_type"));
+            pt.setId(rs.getInt("id"));
             pt.setName(rs.getString("name"));
         }
 
@@ -70,7 +70,7 @@ public class ProductTypeDAO {
         stmt.executeUpdate(""
                 + "UPDATE product_types SET name = '"
                 + pt.getName() + "'"
-                + " WHERE id_type = " + pt.getId()
+                + " WHERE id = " + pt.getId()
         );
     }
 
@@ -79,6 +79,6 @@ public class ProductTypeDAO {
         Connection conn = db.getConn();
 
         Statement stmt = conn.createStatement();
-        stmt.executeUpdate("DELETE FROM product_types WHERE id_type = " + id);
+        stmt.executeUpdate("DELETE FROM product_types WHERE id = " + id);
     }
 }
