@@ -150,9 +150,9 @@ class ProductController extends Controller
      * @param  string  $productType
      * @return \Illuminate\Http\Response
      */
-    public function showProductType(Product $product, String $productType)
+    public function showProductType(Product $product)
     {
-        return new ProductTypeResource(ProductType::find($productType));
+        return new ProductTypeResource($product->productType);
     }
 
     /**
@@ -161,9 +161,9 @@ class ProductController extends Controller
      * @param  \App\Models\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function showBrand(Product $product, String $brand)
+    public function showBrand(Product $product)
     {
-        return new BrandResource(Brand::find($brand));
+        return new BrandResource($product->brand);
     }
 
     /**
@@ -172,9 +172,9 @@ class ProductController extends Controller
      * @param  string  $supplier
      * @return \Illuminate\Http\Response
      */
-    public function showSupplier(Product $product, String $supplier)
+    public function showSupplier(Product $product)
     {
-        return new SupplierResource(Supplier::find($supplier));
+        return new SupplierResource($product->supplier);
     }
 
     /**
