@@ -223,18 +223,6 @@
                         "format": "int64",
                         "example": 1
                     },
-                    "brand": {
-                        "type": "string",
-                        "example": "http://127.0.0.1:8000/api/products/1/brand/4"
-                    },
-                    "type": {
-                        "type": "string",
-                        "example": "http://127.0.0.1:8000/api/products/1/type/2"
-                    },
-                    "supplier": {
-                        "type": "string",
-                        "example": "http://127.0.0.1:8000/api/products/1/supplier/2"
-                    },
                     "name": {
                         "type": "string",
                         "example": "Product name"
