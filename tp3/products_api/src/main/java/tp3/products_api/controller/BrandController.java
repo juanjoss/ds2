@@ -21,7 +21,7 @@ public class BrandController {
         path("/api", () -> {
             path("/brands", () -> {
                 // get all brands
-                get("/all", (req, res) -> {
+                get("", (req, res) -> {
                     try {
                         return this.brandDAO.getAll();
                     } catch (SQLException ex) {
@@ -43,7 +43,7 @@ public class BrandController {
                 }, jsonTransformer);
 
                 // add brand
-                post("/add", (req, res) -> {
+                post("", (req, res) -> {
                     try {
                         Brand brand = new Brand();
                         brand.setName(req.queryParams("name"));

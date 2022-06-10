@@ -1,4 +1,4 @@
-package tp3.products_api.db;
+package products_api.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

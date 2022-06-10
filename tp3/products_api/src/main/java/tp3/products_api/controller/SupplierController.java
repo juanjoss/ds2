@@ -21,7 +21,7 @@ public class SupplierController {
         path("/api", () -> {
             path("/suppliers", () -> {
                 // get all suppliers
-                get("/all", (req, res) -> {
+                get("", (req, res) -> {
                     try {
                         return this.supplierDAO.getAll();
                     } catch (SQLException ex) {
@@ -43,7 +43,7 @@ public class SupplierController {
                 }, jsonTransformer);
 
                 // add supplier
-                post("/add", (req, res) -> {
+                post("", (req, res) -> {
                     try {
                         Supplier s = new Supplier();
                         s.setName(req.queryParams("name"));

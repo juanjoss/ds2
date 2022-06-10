@@ -18,7 +18,7 @@ public class ProductController {
         path("/api", () -> {
             path("/products", () -> {
                 // get all products
-                get("/all", (req, res) -> {
+                get("", (req, res) -> {
                     try {
                         return this.productDAO.getAll();
                     } catch (SQLException ex) {
@@ -41,7 +41,7 @@ public class ProductController {
                 }, jsonTransformer);
 
                 // add product
-                post("/add", (req, res) -> {
+                post("", (req, res) -> {
                     try {
                         Product product = new Product();
 

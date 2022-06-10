@@ -4,10 +4,12 @@ import tp3.products_api.controller.BrandController;
 import tp3.products_api.controller.ProductTypeController;
 import tp3.products_api.controller.ProductController;
 import tp3.products_api.controller.SupplierController;
+
 import tp3.products_api.dao.BrandDAO;
 import tp3.products_api.dao.ProductDAO;
 import tp3.products_api.dao.ProductTypeDAO;
 import tp3.products_api.dao.SupplierDAO;
+
 import tp3.products_api.util.JsonTransformer;
 
 public class App {

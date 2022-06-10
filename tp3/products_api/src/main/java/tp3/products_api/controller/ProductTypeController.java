@@ -21,7 +21,7 @@ public class ProductTypeController {
         path("/api", () -> {
             path("/productTypes", () -> {
                 // get all product types
-                get("/all", (req, res) -> {
+                get("", (req, res) -> {
                     try {
                         return this.ptDAO.getAll();
                     } catch (SQLException ex) {
@@ -43,7 +43,7 @@ public class ProductTypeController {
                 }, jsonTransformer);
 
                 // add product type
-                post("/add", (req, res) -> {
+                post("", (req, res) -> {
                     try {
                         ProductType pt = new ProductType();
                         pt.setName(req.queryParams("name"));
